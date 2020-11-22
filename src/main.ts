@@ -12,3 +12,4 @@ createApp(App)
   .use(Vant)
   .use(router)
   .mount("#app");
+  
