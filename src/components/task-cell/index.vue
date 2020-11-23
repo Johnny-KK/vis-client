@@ -2,12 +2,12 @@
   <div class="task-cell">
     <!-- 标题栏 -->
     <div class="task-cell__title">
-      <van-checkbox v-model="checked" shape="square">复选框</van-checkbox>
-      <div>title</div>
+      <van-checkbox v-model="checked" shape="square"></van-checkbox>
+      <div>{{ task.title }}</div>
     </div>
 
     <!-- 内容栏 -->
-    <div class="task-cell__content" v-if="simple">task cell content task cell content task cell content task cell content task cell content</div>
+    <div class="task-cell__content" v-if="simple">{{ task.content }}</div>
   </div>
 </template>
 
@@ -15,18 +15,20 @@
 /**
  * task-cell 为任务列表组件
  */
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
+
+import { ITask } from '@/core/entities/task';
 
 export default defineComponent({
   name: 'task-cell',
   props: {
     // 是否简单模式
-    simple: { type: Boolean, default: true, required: false }
+    simple: { type: Boolean, default: true, required: false },
+    task: { type: Object as () => ITask, required: true }
   },
-  data() {
-    return {
-      checked: false
-    };
+  setup() {
+    const checked = ref(false);
+    return { checked };
   }
 });
 </script>
@@ -38,7 +40,7 @@ export default defineComponent({
   flex-direction: column;
   overflow: hidden;
   color: #323233;
-  font-size: 14px;
+  font-size: $fs-n;
   line-height: 24px;
   padding: 10px 16px;
 
@@ -67,6 +69,10 @@ export default defineComponent({
   .task-cell__title {
     display: flex;
     flex-direction: row;
+
+    & > .van-checkbox {
+      margin-right: 10px;
+    }
   }
 
   .task-cell__content {

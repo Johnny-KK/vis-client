@@ -1,0 +1,17 @@
+$theme-blue: (
+  main-bg-color: #677ed7
+);
+$theme-pink: (
+  main-bg-color: #ec7f97
+);
+$theme-green: (
+  main-bg-color: #5dcb94
+);
+
+@mixin background-color($name) {
+  @each $theme-name in $theme-blue, $theme-pink, $theme-green {
+    @if data-theme == $theme-name {
+      background-color: map-get($theme-name, $name);
+    }
+  }
+}
