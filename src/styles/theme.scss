@@ -1,17 +1,73 @@
 $theme-blue: (
-  main-bg-color: #677ed7
+  main-bg-color: #677ed7,
+  main-color: #f6f6f6
 );
 $theme-pink: (
-  main-bg-color: #ec7f97
+  main-bg-color: #ec7f97,
+  main-color: #f6f6f6
 );
 $theme-green: (
-  main-bg-color: #5dcb94
+  main-bg-color: #5dcb94,
+  main-color: #f6f6f6
+);
+$theme-yellow: (
+  main-bg-color: #f0c145,
+  main-color: #f6f6f6
+);
+$theme-black: (
+  main-bg-color: #272a34,
+  main-color: #f6f6f6
+);
+$theme-grey: (
+  main-bg-color: #7d7f83,
+  main-color: #f6f6f6
+);
+$theme-white: (
+  main-bg-color: #f3f4f5,
+  main-color: #303030
+);
+$theme-dark: (
+  main-bg-color: #151515,
+  main-color: #f6f6f6
+);
+
+$themes: (
+  theme-blue: $theme-blue,
+  theme-pink: $theme-pink,
+  theme-green: $theme-green,
+  theme-yellow: $theme-yellow,
+  theme-black: $theme-black,
+  theme-grey: $theme-grey,
+  theme-white: $theme-white,
+  theme-dark: $theme-dark
 );
 
 @mixin background-color($name) {
-  @each $theme-name in $theme-blue, $theme-pink, $theme-green {
-    @if data-theme == $theme-name {
-      background-color: map-get($theme-name, $name);
+  @each $themename, $theme in $themes {
+    [data-theme='#{$themename}'] & {
+      background-color: map-get($map: $theme, $key: $name);
+    }
+  }
+}
+
+@mixin color($name) {
+  @each $themename, $theme in $themes {
+    [data-theme='#{$themename}'] & {
+      color: map-get($map: $theme, $key: $name);
+    }
+  }
+}
+
+$font-normal: ();
+
+$fonts: (
+  font-normal: $font-normal
+);
+
+@mixin font-size($name) {
+  @each $themename, $theme in $themes {
+    [data-theme='#{$themename}'] & {
+      font-size: map-get($map: $theme, $key: $name);
     }
   }
 }

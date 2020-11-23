@@ -1,6 +1,14 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+
+// 加载app配置
+// TODO 将配置写入配置文件
+window.document.documentElement.setAttribute('data-theme', 'theme-blue');
+
+// router
 import router from './router';
+
+// vuex
 import store from './store';
 
 // 整体样式

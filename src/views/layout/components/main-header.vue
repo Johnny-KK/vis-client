@@ -2,10 +2,6 @@
   <div class="main-header">
     <span>vis助手</span>
     <span class="sperate"></span>
-
-    <van-button @click="changeTheme('theme-blue')">blue</van-button>
-    <van-button @click="changeTheme('theme-pink')">pink</van-button>
-
     <vis-icon name="line"></vis-icon>
     <vis-icon name="border"></vis-icon>
     <vis-icon name="close"></vis-icon>
@@ -26,11 +22,7 @@ export default defineComponent({
 
     console.info(appTheme.value);
 
-    function changeTheme(theme: string) {
-      window.document.documentElement.setAttribute('data-theme', theme);
-    }
-
-    return { appTheme, changeTheme };
+    return { appTheme };
   }
 });
 </script>
@@ -40,6 +32,7 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   @include background-color(main-bg-color);
+  @include color(main-color);
   height: 34px;
   align-items: center;
   padding: 0 16px;

@@ -18,7 +18,7 @@ export default defineComponent({
   components: { [MainHeader.name]: MainHeader, 'vis-setting': Setting },
   data() {
     return {
-      show: false
+      show: true
     };
   }
 });
