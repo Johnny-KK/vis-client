@@ -8,6 +8,7 @@ export interface ITask {
   content: string;
   // 状态
   status: TaskStatus;
+  //
 }
 
 // 任务状态

@@ -5,7 +5,10 @@ interface State {
 
 const app = {
   state: {
-    theme: 'blue'
+    // 主题
+    theme: 'blue',
+    // 设备类型
+    device: ''
   },
   mutations: {
     SetTheme: (state: State, theme: string) => (state.theme = theme)

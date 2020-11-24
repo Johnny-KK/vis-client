@@ -1,12 +1,19 @@
 // 任务清单实体
 export interface IList {
+  // 主键
   id: number | null;
+  // 清单名称
   name: string;
+  // 清单颜色
   color: string | null;
+  // 排序
+  order: number;
+  // 所属文件夹
+  folderId: number | null;
 }
 
-// 任务清单可选颜色列表--简易
-export const listColorListSimple: string[][] = [
+// 任务清单可选颜色列表
+export const listColorList: string[][] = [
   ['#86180F', '#CF4B41', '#DC6E6A', '#E28684', '#B29B90'],
   ['#A96324', '#DA954B', '#E8B35D', '#F2CDA2', '#C5B59F'],
   ['#B89230', '#E9C451', '#F9DA78', '#FBE6A2', '#BEB8A0'],

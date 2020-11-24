@@ -10,11 +10,6 @@
     <van-collapse-item title="标题1" name="1" value="25">
       <van-cell title="单元格" value="内容" label="label" clickable />
       <van-cell title="单元格" value="内容" clickable />
-      <van-cell title="单元格" value="内容" clickable />
-      <van-cell title="单元格" value="内容" clickable />
-      <van-cell title="单元格" value="内容" clickable />
-      <van-cell title="单元格" value="内容" clickable />
-      <van-cell title="单元格" value="内容" clickable />
       <van-cell title="单元格" value="内容" clickable>
         <template #icon>
           <van-checkbox name="item" />
