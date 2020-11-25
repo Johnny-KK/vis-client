@@ -26,7 +26,7 @@ export default defineComponent({
   data() {
     return {
       show: false,
-      showForm: true
+      showForm: false
     };
   }
 });

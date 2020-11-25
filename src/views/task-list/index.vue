@@ -8,7 +8,11 @@
 
   <van-collapse v-model="activeName">
     <van-collapse-item title="标题1" name="1" value="25">
-      <van-cell title="单元格" value="内容" label="label" clickable />
+      <vis-card></vis-card>
+      <van-cell title="单元格" value="内容" is-link />
+
+      <vis-cell></vis-cell>
+
       <van-cell title="单元格" value="内容" clickable />
       <van-cell title="单元格" value="内容" clickable>
         <template #icon>

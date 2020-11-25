@@ -24,9 +24,13 @@ import 'vant/lib/index.css';
 // components
 import { componentsPlugin } from '@/components/index';
 
+// vis components
+import VisUI from './vis/index';
+
 createApp(App)
   .use(store)
   .use(Vant)
   .use(componentsPlugin)
+  .use(VisUI)
   .use(router)
   .mount('#app');
